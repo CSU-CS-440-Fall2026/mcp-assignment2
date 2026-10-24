@@ -22,6 +22,7 @@ class MCPClient:
         self._session: Optional[ClientSession] = None
         self._exit_stack: AsyncExitStack = AsyncExitStack()
 
+
     async def connect(self):
         server_params = StdioServerParameters(
             command=self._command,
@@ -109,10 +110,13 @@ class MCPClient:
 async def main():
     async with MCPClient(
         # If using Python without UV, update command to 'python' and remove "run" from args.
-        command="uv",
-        args=["run", "mcp_server.py"],
-    ) as _client:
-        pass
+        #command="uv",
+        #args=["run", "mcp_server.py"],
+        command="python",
+        args=["mcp_server.py"],
+    ) as client:
+        result = await client.list_tools()
+        print(result)
 
 
 if __name__ == "__main__":
