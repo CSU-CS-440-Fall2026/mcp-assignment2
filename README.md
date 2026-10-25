@@ -15,7 +15,9 @@ MCP Chat is a command-line interface application that enables interactive chat c
 
 ```
 ANTHROPIC_API_KEY=""  # Enter your Anthropic API secret key
+CLAUDE_MODEL="claude-sonnet-5-5"
 ```
+
 
 ### Step 2: Install dependencies
 
